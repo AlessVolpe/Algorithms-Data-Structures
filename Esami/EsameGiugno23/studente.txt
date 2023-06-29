@@ -1,8 +1,0 @@
-Cognome: 
-Nome: 
-Matricola: 
-Email Sapienza: 
-Esame ([V]ecchio/[N]uovo): 
-Linguaggio ([C]/[J]ava):
-Note (eventuali integrazioni o altro):
-Laureando/a (solo se sessione di Luglio 2023):
