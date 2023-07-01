@@ -1,4 +1,4 @@
-package Ricorsione.Fibonacci;
+package Recursion.Fibonacci;
 
 import java.util.Arrays;
 import java.util.Scanner;

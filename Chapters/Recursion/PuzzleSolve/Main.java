@@ -1,5 +1,3 @@
-package Ricorsione.PuzzleSolve;
-
 import java.util.*;
 
 public class Main {

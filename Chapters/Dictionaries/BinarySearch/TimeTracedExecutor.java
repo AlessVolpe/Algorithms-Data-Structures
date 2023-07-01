@@ -1,4 +1,4 @@
-package Dizionari.BinarySearch;
+package Dictionaries.BinarySearch;
 
 import java.text.NumberFormat;
 import java.time.Duration;

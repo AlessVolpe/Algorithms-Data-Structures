@@ -1,4 +1,4 @@
-package Ricorsione.RecursiveFactorial;
+package Recursion.RecursiveFactorial;
 
 import java.util.Scanner;
 

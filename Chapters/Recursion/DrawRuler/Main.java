@@ -1,4 +1,4 @@
-package Ricorsione.DrawRuler;
+package Recursion.DrawRuler;
 
 import java.util.Scanner;
 

@@ -1,4 +1,4 @@
-package Ricorsione.Fibonacci;
+package Recursion.Fibonacci;
 
 public class FibonacciAlgorithms {
     public static Integer binaryFib(Integer k) {

@@ -1,4 +1,4 @@
-package Ricorsione.DrawRuler;
+package Recursion.DrawRuler;
 
 public class DrawRuler {
     public static void drawRuler(int nInches, int majorLenght) {

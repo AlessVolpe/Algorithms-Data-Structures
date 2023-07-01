@@ -19,7 +19,7 @@ public class Utils {
 
     public static int[] generateArray() {
         Random rand = new Random();
-        int size = rand.nextInt(1, 20) + 1;
+        int size = rand.nextInt(20) + 1;
         int output[] = new int[size];
 
         for (int i = 0; i < size; i++)  

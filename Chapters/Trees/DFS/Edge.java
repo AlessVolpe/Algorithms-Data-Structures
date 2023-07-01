@@ -1,4 +1,4 @@
-package Alberi.DFS;
+package Trees.DFS;
 
 public class Edge {
     int source, dest;

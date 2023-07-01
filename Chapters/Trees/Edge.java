@@ -1,4 +1,4 @@
-package Alberi;
+package Trees;
 
 public class Edge {
     int source, dest;

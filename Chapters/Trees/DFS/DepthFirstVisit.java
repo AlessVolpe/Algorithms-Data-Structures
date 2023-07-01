@@ -1,4 +1,4 @@
-package Alberi.DFS;
+package Trees.DFS;
 
 public class DepthFirstVisit {
     public static void DFS (Graph graph, int v, boolean[] discovered) {

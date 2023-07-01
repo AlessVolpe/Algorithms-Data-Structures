@@ -1,4 +1,4 @@
-package Ricorsione.DrawRuler;
+package Recursion.DrawRuler;
 
 public class DrawTicks {
     public static void drawOneTick(int tickLenght) {

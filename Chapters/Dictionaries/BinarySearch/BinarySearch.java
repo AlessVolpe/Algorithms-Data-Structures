@@ -1,4 +1,4 @@
-package Dizionari.BinarySearch;
+package Dictionaries.BinarySearch;
 
 public class BinarySearch {
     public int binarySearchIterative(int arr[], int x)  {

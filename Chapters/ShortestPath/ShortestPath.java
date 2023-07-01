@@ -1,4 +1,4 @@
-package Chapters.ShortestPath;
+package ShortestPath;
 
 public class ShortestPath {
     

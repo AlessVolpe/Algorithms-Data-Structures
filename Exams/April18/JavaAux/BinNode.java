@@ -1,4 +1,4 @@
-package EsameAprile18.JavaAux;
+package Exams.April18.JavaAux;
 
     public class BinNode{
         private int key;
