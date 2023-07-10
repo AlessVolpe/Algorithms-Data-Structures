@@ -32,3 +32,26 @@ ha costo asitotico nel caso peggiore di O(n) (caso peggiore:elemento con chiave 
 (Nel calcolo asintotico di una somma ci interessa sempre l'addendo con coefficiente maggiore).
 
 3.2)
+i) L'obiettivo del problema dell'ordinamento topologico per grafi diretti è quello di trovare un ordine lineare 
+dei nodi del grafo tale che, per ogni arco diretto da un nodo A ad un nodo B, nell'ordinamento venga prima A di B;
+quindi che nell'ordinamento i nodi che hanno archi entranti da un nodo u vengano dopo del suddetto nodo.
+
+ii) Possiamo, però, enunciare il seguente teorema: un digrafo ammette un ordinamento topologico se e solo se è un DAG (Directed Acyclic Graph).
+Possiamo provarlo, considerando, un algoritmo che risolve il problema di Topological Sort (un possibile algoritmo è
+un estensione di DFS) e mostrando che, se (u,v) è un arco, u.rank < v.rank. 
+Una DFS distingue gli archi in quattro categorie:
+- Arco cross, è un semplice arco di attraversamento;
+- Arco tree, viene specificato quando esiste un sottografo minimamente connesso e collegato da un e un solo percorso;
+- Arco forward, arco uscente che scopre un nuovo nodo, quindi continua la DFS;
+- Arco back, arco uscente che connette ad un nodo già scoperto, formando quindi un ciclo.
+
+Quindi abbiamo:
+- Se (u,v) è un arco di tipo cross (considerando topologicalDFS), allora significa che l'algoritmo è stato completato 
+prima per v che per u => v.rank > rank.u;
+- se, (u,v) è un arco tree o forward, v è un discendente (diretto se arco tree) di u e quindi è visitato prima di
+quest'ultimo, quindi anche in questo caso rank.v > rank.u;
+Poiché in topologicalDFS i nodi raggiungibili (e non esplorati) da un vertice considerato ricevono un numero topologico
+più alto di quel vertice, nel caso della presenza di un arco back ci troveremo davanti ad un assurdo: dato il seguente ciclo
+con nodi u, v, w e archi (u,v), (v,w) e (w,u)(:= arco back), notiamo che w ha come nodo uscente u che ha rank inferiore, quindi
+un grafo ciclico non ammette ordinamento topologico => Se un grago diretto ammette un ordinamento topologico,allora questo è
+privo di cicli.
