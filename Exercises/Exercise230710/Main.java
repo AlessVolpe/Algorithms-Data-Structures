@@ -58,7 +58,13 @@ public class Main {
                         try {
                             List<Stazione> percorso = autostrada.trovaPercorso(Integer.parseInt(array[1]), Integer.parseInt(array[2]));
                             if (percorso != null) {
-                                System.out.println(percorso.toString());
+                                for (Stazione elem : autostrada.stazioniServizio) {
+                                    if (elem.distanza == Integer.parseInt(array[1]))
+                                        percorso.add(0, elem);
+                                    else ;
+                                }
+                                
+                                System.out.println("Percorso il percorso più veloce passa per: " + percorso.toString().replace(" ,", ",").replace(" ]", "]"));
                             } else throw new Exception("Percorso non trovato");
                         } catch (Exception e) {
                             e.printStackTrace();

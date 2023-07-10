@@ -19,7 +19,7 @@ public class Stazione implements Comparable<Stazione> {
 
     @Override
     public String toString() {
-        String returnValue = "Distanza " + this.distanza + ": ";
+        String returnValue = "Stazione a " + this.distanza + "km: ";
         for (Veicolo veicolo : this.parcoAuto) {
             returnValue += veicolo.toString() + " ";
         }

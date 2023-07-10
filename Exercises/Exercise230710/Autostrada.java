@@ -21,10 +21,10 @@ public class Autostrada {
 
     public List<Stazione> trovaPercorso(int distanzaPartenza, int distanzaArrivo) {
         PriorityQueue<List<Stazione>> queue = new PriorityQueue<List<Stazione>>();
-
+        
         for (Stazione stazione : this.stazioniServizio) {
             if (stazione.distanza <= distanzaPartenza && stazione.distanza > 0) {
-                List<Stazione> percorso = new ArrayList<Stazione>();
+                Percorso percorso = new Percorso(new ArrayList<>());
                 percorso.add(stazione);
                 queue.offer(percorso);
             }
@@ -35,14 +35,16 @@ public class Autostrada {
             Stazione stazioneCorrente = percorsoCorrente.get(percorsoCorrente.size() - 1);
             int distanzaCorrente = stazioneCorrente.distanza;
 
-            if (distanzaCorrente == distanzaArrivo) return percorsoCorrente;
+            if (distanzaCorrente == distanzaArrivo) {
+                return percorsoCorrente;
+            }
 
             for (Stazione prossimaStazione : this.stazioniServizio) {
                 int prossimaDistanza = prossimaStazione.distanza;
 
                 for (Veicolo veicolo : stazioneCorrente.parcoAuto) {
                     if (prossimaDistanza > distanzaCorrente && prossimaDistanza - distanzaCorrente <= veicolo.autonomia) {
-                        List<Stazione> nuovoPercorso = new ArrayList<>(percorsoCorrente);
+                        Percorso nuovoPercorso = new Percorso(percorsoCorrente);
                         nuovoPercorso.add(prossimaStazione);
                         queue.offer(nuovoPercorso);
                     }
