@@ -23,9 +23,9 @@ public class Driver {
         if (root!=null){
             BinNode l1 = root.setLeft(new BinNode(5));
             BinNode r1 = root.setRight(new BinNode(20));
-            BinNode l2 = l1.setLeft(new BinNode(3));
-            BinNode r2 = l1.setRight(new BinNode(17));
-            BinNode l3 = r1.setRight(new BinNode(25));
+            l1.setLeft(new BinNode(3));
+            l1.setRight(new BinNode(17));
+            r1.setRight(new BinNode(25));
         }
 
 
