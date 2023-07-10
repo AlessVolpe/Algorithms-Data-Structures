@@ -45,15 +45,17 @@ public class Autostrada {
 
             for (Stazione prossimaStazione : this.stazioniServizio) {
                 prossimaDistanza = prossimaStazione.distanza;
-
-                for (Veicolo veicolo : stazioneCorrente.parcoAuto) {
-                    if (prossimaDistanza > distanzaCorrente && prossimaDistanza - distanzaCorrente <= veicolo.autonomia) {
-                        nuovoPercorso = new Percorso();
-                        nuovoPercorso.addAll(percorsoCorrente);
-                        nuovoPercorso.add(prossimaStazione);
-                        queue.offer(nuovoPercorso); 
+                
+                if (prossimaDistanza > distanzaCorrente) {
+                    for (Veicolo veicolo : stazioneCorrente.parcoAuto) {
+                        if (prossimaDistanza - distanzaCorrente <= veicolo.autonomia) {
+                            nuovoPercorso = new Percorso();
+                            nuovoPercorso.addAll(percorsoCorrente);
+                            nuovoPercorso.add(prossimaStazione);
+                            queue.offer(nuovoPercorso); 
+                        }
                     }
-                }
+                } 
             }
         }
         return null;
