@@ -7,6 +7,10 @@ public class Percorso extends ArrayList<Stazione> implements Comparable<Percorso
     public int numeroStazioni;
     public int distanzaTotale;
 
+    public Percorso() {
+        super();
+    }
+
     public Percorso(List<Stazione> stazioniPercorso) {
         super();
         this.stazioniPercorso = stazioniPercorso;

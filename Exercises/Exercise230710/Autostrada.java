@@ -19,8 +19,12 @@ public class Autostrada {
         stazioniServizio.remove(stazione);
     }
 
-    public List<Stazione> trovaPercorso(int distanzaPartenza, int distanzaArrivo) {
-        PriorityQueue<List<Stazione>> queue = new PriorityQueue<List<Stazione>>();
+    public Percorso trovaPercorso(int distanzaPartenza, int distanzaArrivo) {
+        PriorityQueue<Percorso> queue = new PriorityQueue<Percorso>();
+        Percorso percorsoCorrente;
+        Percorso nuovoPercorso;
+        Stazione stazioneCorrente;
+        int prossimaDistanza;
         
         for (Stazione stazione : this.stazioniServizio) {
             if (stazione.distanza <= distanzaPartenza && stazione.distanza > 0) {
@@ -31,8 +35,8 @@ public class Autostrada {
         }
 
         while (!queue.isEmpty()) {
-            List<Stazione> percorsoCorrente = queue.poll();
-            Stazione stazioneCorrente = percorsoCorrente.get(percorsoCorrente.size() - 1);
+            percorsoCorrente = queue.poll();
+            stazioneCorrente = percorsoCorrente.get(percorsoCorrente.size() - 1);
             int distanzaCorrente = stazioneCorrente.distanza;
 
             if (distanzaCorrente == distanzaArrivo) {
@@ -40,13 +44,14 @@ public class Autostrada {
             }
 
             for (Stazione prossimaStazione : this.stazioniServizio) {
-                int prossimaDistanza = prossimaStazione.distanza;
+                prossimaDistanza = prossimaStazione.distanza;
 
                 for (Veicolo veicolo : stazioneCorrente.parcoAuto) {
                     if (prossimaDistanza > distanzaCorrente && prossimaDistanza - distanzaCorrente <= veicolo.autonomia) {
-                        Percorso nuovoPercorso = new Percorso(percorsoCorrente);
+                        nuovoPercorso = new Percorso();
+                        nuovoPercorso.addAll(percorsoCorrente);
                         nuovoPercorso.add(prossimaStazione);
-                        queue.offer(nuovoPercorso);
+                        queue.offer(nuovoPercorso); 
                     }
                 }
             }
