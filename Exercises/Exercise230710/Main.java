@@ -85,7 +85,7 @@ public class Main {
 
     public static void main(String[] args) {
         Autostrada autostrada = new Autostrada();
-        driver(autostrada, "C:\\Users\\aless\\OneDrive\\Documenti\\Universit\u00E0\\Lezioni\\ASD\\Exercises\\Exercise230710\\open_1.txt");
+        driver(autostrada, "Exercises\\Exercise230710\\open_1.txt"); //C:\\Users\\aless\\OneDrive\\Documenti\\Universit\u00E0\\Lezioni\\ASD\\Exercises\\Exercise230710\\
         System.out.println(autostrada.toString());
     }
 }
