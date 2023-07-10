@@ -50,7 +50,7 @@ public class Main {
                             }
                             System.out.println("Rimossa stazione al km: " + array[1]);
                         } catch (Exception e) {
-                            System.out.println("Stazione non rimossa");
+                            System.out.print("Stazione non rimossa -> ");
                             e.printStackTrace();
                         }
                         break;
@@ -65,8 +65,9 @@ public class Main {
                                 }
                                 
                                 System.out.println("Percorso il percorso più veloce passa per: " + percorso.toString().replace(" ,", ",").replace(" ]", "]"));
-                            } else throw new Exception("Percorso non trovato");
+                            } else throw new Exception("Mancanza di veicoli con sufficiente autonomia nella stazione al km: " + array[1]);
                         } catch (Exception e) {
+                            System.out.print("Percorso non trovato -> ");
                             e.printStackTrace();
                         }
                         break;
