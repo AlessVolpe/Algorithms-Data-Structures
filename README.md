@@ -8,7 +8,7 @@ Mostly pseudo or unfinished code, going over the Structures analyzed during the 
 
 ## Exams
 
-Some of the past exams, they are unfinished and un polished.
+Some of the past exams, they are unfinished and unpolished.
 
 ## Exercises
 
